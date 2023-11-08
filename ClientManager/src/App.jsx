@@ -1,4 +1,6 @@
 import { Navbar } from "./components/Navbar/Navbar"
+import { Clients } from "./pages/Clients/Clients"
+import { Home } from "./pages/Home/Home"
 
 
 function App() {
@@ -7,7 +9,9 @@ function App() {
     <>
       <div className='text-neutral-500 w-screen text-center font-semibold text-xl'>
         <Navbar/>
-        Client Manager 
+
+        <Home/>
+        <Clients/>
       </div>
 
     </>

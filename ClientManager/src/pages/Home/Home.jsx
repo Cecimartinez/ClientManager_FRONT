@@ -1,7 +1,8 @@
-export const Home= ()=>{
+
+export const Home = () => {
   return (
     <div className="">
-      Page home
+      Home page
     </div>
   )
 }
