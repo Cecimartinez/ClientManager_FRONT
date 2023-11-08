@@ -4,7 +4,7 @@ export const Clients = () => {
   return (
     <>
       <h1 className="text-2xl">Client Table</h1>
-      <div className="px-10 py-10">
+      <div className="px-10 mt-10">
         <ClientsTable />
       </div>
     </>

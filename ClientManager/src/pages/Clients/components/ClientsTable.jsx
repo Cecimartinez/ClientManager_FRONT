@@ -1,53 +1,192 @@
-import { DataGrid } from '@mui/x-data-grid';
 
-export const ClientsTable =()=>{
-  const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
-    {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 90,
-    },
-    {
-      field: 'fullName',
-      headerName: 'Full name',
-      description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
-      valueGetter: (params) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-    },
-  ];
-  
-  const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-  ];
-  return(
+export const ClientsTable = () => {
+
+  return (
     <>
-         <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
-    </div>
+      <div className="container max-w-3xl px-4 mx-auto sm:px-8">
+        <div className="py-8">
+          <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
+            <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">
+              <table className="min-w-full leading-normal">
+                <thead>
+                  <tr>
+                    <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                      Nombre
+                    </th>
+                    <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                      Apellido
+                    </th>
+                    <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                      Teléfono
+                    </th>
+                    <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                      Correo                            </th>
+                    <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                      status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            Jean marc
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        Admin
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      11574856
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      pepe@gmail.com
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+                        <span aria-hidden="true" className="absolute inset-0 bg-green-200 rounded-full opacity-50">
+                        </span>
+                        <span className="relative">
+                          active
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            Marcus coco
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        Designer
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      11574856
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      pepe@gmail.com
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+                        <span aria-hidden="true" className="absolute inset-0 bg-green-200 rounded-full opacity-50">
+                        </span>
+                        <span className="relative">
+                          active
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            Ecric marc
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        Developer
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        11574856
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      pepe@gmail.com
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+                        <span aria-hidden="true" className="absolute inset-0 bg-green-200 rounded-full opacity-50">
+                        </span>
+                        <span className="relative">
+                          active
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            Julien Huger
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        User
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      11574856
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                      pepe@gmail.com
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+                        <span aria-hidden="true" className="absolute inset-0 bg-green-200 rounded-full opacity-50">
+                        </span>
+                        <span className="relative">
+                          active
+                        </span>
+                      </span>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }
